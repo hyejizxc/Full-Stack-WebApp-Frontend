@@ -14,7 +14,7 @@ export const TaskProvider = ({ children }) => {
 
   // API base URL
   // Use environment variable instead of hardcoded localhost
-  const API_URL = `${process.env.REACT_APP_API_URL}/api/tasks`;
+  const API_URL = 'https://full-stack-webapp-backend.onrender.com/api/tasks';
 
 
   // Get all tasks
