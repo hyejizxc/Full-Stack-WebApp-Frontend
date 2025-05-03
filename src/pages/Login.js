@@ -5,6 +5,8 @@ import AuthContext from '../context/AuthContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL;
+
 const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -31,10 +33,11 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        'http://localhost:5000/api/users/login',
+        `${API_BASE_URL}/api/users/login`,
         formData,
         config
       );
+
 
       login(data);
       navigate('/');

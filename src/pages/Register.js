@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL;
+
 const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -43,9 +45,10 @@ const Register = () => {
       };
 
       await axios.post(
-        'http://localhost:5000/api/users/register',
+        `${API_BASE_URL}/api/users/register`,
         registerData,
         config
+      
       );
 
       toast.success('Registration successful. Please login.');
