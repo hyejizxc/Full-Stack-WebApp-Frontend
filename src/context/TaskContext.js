@@ -13,7 +13,9 @@ export const TaskProvider = ({ children }) => {
   const { user } = useContext(AuthContext);
 
   // API base URL
-  const API_URL = 'http://localhost:5000/api/tasks';
+  // Use environment variable instead of hardcoded localhost
+  const API_URL = `${process.env.REACT_APP_API_URL}/api/tasks`;
+
 
   // Get all tasks
   const getTasks = async () => {
